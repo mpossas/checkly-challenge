@@ -20,8 +20,15 @@ npm install
 
 ### Compile and Hot-Reload for Development
 
+#### Backend
 ```sh
-npm run dev
+# Start server to consume API
+npm run backend
+```
+
+#### Frontend
+```sh
+npm start
 ```
 
 ### Type-Check, Compile and Minify for Production

@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@primer/octicons": "13.0.0",
+    "axios": "1.7.4",
     "vue": "3.4.21",
     "vue-i18n": "9.14.0"
   },
