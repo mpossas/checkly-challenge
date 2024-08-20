@@ -1,6 +1,8 @@
 <template>
   <h1>{{ $t('reporting.title') }}</h1>
+  <LocaleSelector />
 </template>
 
-<style scoped>
-</style>
+<script setup lang="ts">
+import LocaleSelector from '@/components/preferences/locale/LocaleSelector.vue'
+</script>
