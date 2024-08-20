@@ -1,12 +1,15 @@
 <template>
-  <div v-html="getSvg()" style="display: inline" />
+  <div v-html="getSvg()" style="display: inline; fill: var(--content-color);" />
 </template>
 
-<script setup>
-import octicons from '@primer/octicons'
+<script setup lang="ts">
+import octicons, { type IconName } from '@primer/octicons'
 
 const props = defineProps({
-  name: String,
+  name: {
+    type: String,
+    required: true
+  },
   width: {
     type: Number,
     default: 16,
@@ -16,7 +19,7 @@ const props = defineProps({
 function getSvg () {
   const { name, width } = props
   try {
-    return octicons[name].toSVG({ width })
+    return octicons[name as IconName].toSVG({ width })
   } catch (e) {
     throw new Error(`${name} is not an octicon icon`)
   }
