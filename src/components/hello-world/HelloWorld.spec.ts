@@ -1,9 +1,9 @@
-import { mount } from '@vue/test-utils'
+import { mountComponent } from '@/utils/tests'
 import HelloWorld from './HelloWorld.vue'
 
 describe('HelloWorld', () => {
   it('renders properly', () => {
-    const wrapper = mount(HelloWorld)
-    expect(wrapper.text()).toContain('Checkly challenge')
+    const wrapper = mountComponent(HelloWorld)
+    expect(wrapper.text()).toContain('Reporting')
   })
 })

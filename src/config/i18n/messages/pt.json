@@ -1,0 +1,15 @@
+{
+  "reporting": {
+    "title": "Relatórios",
+    "description": "Analise o desempenho de longo prazo de suas verificações e exporte métricas agregadas para tarefas de relatórios externos."
+  },
+  "table": {
+    "type": "Tipo",
+    "name": "Nome",
+    "success": "Sucesso",
+    "avg": "Méd"
+  },
+  "button": {
+    "theme": "Tema de cores"
+  }
+}

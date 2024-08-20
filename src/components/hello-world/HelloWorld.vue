@@ -1,5 +1,5 @@
 <template>
-  <h1>Checkly challenge</h1>
+  <h1>{{ $t('reporting.title') }}</h1>
 </template>
 
 <style scoped>

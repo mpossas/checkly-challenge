@@ -1,0 +1,15 @@
+{
+  "reporting": {
+    "title": "Reporting",
+    "description": "Analyse long term performance of your checks and export aggregated metrics for external reporting duties."
+  },
+  "table": {
+    "type": "Type",
+    "name": "Name",
+    "success": "Success",
+    "avg": "Avg"
+  },
+  "button": {
+    "theme": "Color theme"
+  }
+}
