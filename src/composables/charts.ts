@@ -1,8 +1,13 @@
 import { ref } from 'vue'
-import Highcharts from 'highcharts'
 import { useI18n } from 'vue-i18n'
+import Highcharts from 'highcharts'
+import highchartsAccessibility from "highcharts/modules/accessibility"
 import type { CheckId, CheckStats } from "@/services/interfaces"
 import { fetchCheckStats } from '@/services/checks'
+import { toPercentage, toSeconds } from '@/utils/metrics'
+import type { ChartOptions } from './interfaces'
+
+highchartsAccessibility(Highcharts)
 
 export const useStatsCharts = () => {
   const { t } = useI18n()
@@ -24,12 +29,12 @@ export const useStatsCharts = () => {
     const avg: number[][] = []
 
     checkStats.value.forEach(bucket => {
-      p99.push([bucket.timestamp, +bucket.p99.toFixed()])
-      p95.push([bucket.timestamp, +bucket.p95.toFixed()])
-      avg.push([bucket.timestamp, +bucket.avg.toFixed()])
+      p99.push([bucket.timestamp, toSeconds(bucket.p99)])
+      p95.push([bucket.timestamp, toSeconds(bucket.p95)])
+      avg.push([bucket.timestamp, toSeconds(bucket.avg)])
     })
 
-    plotChart(hostElementId, [{
+    const series = [{
       name: 'P99',
       data: p99
     }, {
@@ -38,24 +43,37 @@ export const useStatsCharts = () => {
     }, {
       name: t('metrics.avg').toUpperCase(),
       data: avg
-    }])
+    }]
+
+    plotChart({
+      hostElementId,
+      suffix: 's',
+      series
+    })
   }
 
   const plotSuccessRatioChart = (hostElementId: string) => {
     const success = checkStats.value.map(bucket => {
-      return [bucket.timestamp, +(bucket.success * 100).toFixed()]
+      return [bucket.timestamp, toPercentage(bucket.success)]
     })
 
-    plotChart(hostElementId, [{
+    const series = [{
       name: t('metrics.success-ratio'),
-      data: success
-    }])
+      data: success,
+    }]
+
+    plotChart({
+      hostElementId,
+      suffix: '%',
+      series
+    })
   }
 
-  const plotChart = (hostElementId: string, series: any) => {
+  const plotChart = ({ hostElementId, suffix, series }: ChartOptions) => {
     Highcharts.chart(hostElementId, {
       chart: {
         type: 'area',
+        height: 175
       },
       title: {
         text: ''
@@ -66,11 +84,21 @@ export const useStatsCharts = () => {
         verticalAlign: 'middle'
       },
       colors: ['#c8c8c8', '#7d7d7d', '#323232'],
+      tooltip: {
+        shared: true,
+        xDateFormat: '%e %b %H:%M',
+        valueSuffix: suffix
+      },
       yAxis: {
         title: {
           text: ''
         },
-        gridLineWidth: 0
+        gridLineWidth: 0,
+        labels: {
+          formatter: function () {
+            return this.value + suffix
+          }
+        }
       },
       xAxis: {
         type: 'datetime',
@@ -78,7 +106,6 @@ export const useStatsCharts = () => {
           hour: '%H:%M'
         }
       },
-      series,
       responsive: {
         rules: [{
           condition: {
@@ -92,7 +119,8 @@ export const useStatsCharts = () => {
             }
           }
         }]
-      }
+      },
+      series,
     })
   }
 
