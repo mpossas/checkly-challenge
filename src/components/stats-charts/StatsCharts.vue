@@ -9,15 +9,15 @@
         {{ $t('metrics.response-time') }}
       </button>
       <button
-        data-testid="success-rate-button"
-        :class="{ active: showSuccessRate }"
-        @click="displayChart(SUCCESS_RATE)"
+        data-testid="success-ratio-button"
+        :class="{ active: showSuccessRatio }"
+        @click="displayChart(SUCCESS_RATIO)"
       >
-        {{ $t('metrics.success-rate') }}
+        {{ $t('metrics.success-ratio') }}
       </button>
     </section>
     <figure v-show="showResponseTime" :id="`response-time-${checkId}`"></figure>
-    <figure v-show="showSuccessRate" :id="`success-rate-${checkId}`"></figure>
+    <figure v-show="showSuccessRatio" :id="`success-ratio-${checkId}`"></figure>
   </article>
 </template>
 
@@ -26,14 +26,14 @@ import { computed, ref } from 'vue'
 import type { CheckId } from '@/services/interfaces'
 
 const RESPONSE_TIME = 0
-const SUCCESS_RATE = 1
+const SUCCESS_RATIO = 1
 
 defineProps<{ checkId: CheckId }>()
 
 const activeChart = ref(0)
 
 const showResponseTime = computed(() => activeChart.value === RESPONSE_TIME)
-const showSuccessRate = computed(() => activeChart.value === SUCCESS_RATE)
+const showSuccessRatio = computed(() => activeChart.value === SUCCESS_RATIO)
 
 const displayChart = (chartType: number) => {
   activeChart.value = chartType

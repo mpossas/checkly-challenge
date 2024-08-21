@@ -15,7 +15,7 @@ export const useStatsCharts = () => {
 
     checkStats.value = response
     plotResponseTimeChart(`response-time-${checkId}`)
-    plotSuccessRateChart(`success-rate-${checkId}`)
+    plotSuccessRatioChart(`success-ratio-${checkId}`)
   }
 
   const plotResponseTimeChart = (hostElementId: string) => {
@@ -41,13 +41,13 @@ export const useStatsCharts = () => {
     }])
   }
 
-  const plotSuccessRateChart = (hostElementId: string) => {
+  const plotSuccessRatioChart = (hostElementId: string) => {
     const success = checkStats.value.map(bucket => {
       return [bucket.timestamp, +(bucket.success * 100).toFixed()]
     })
 
     plotChart(hostElementId, [{
-      name: t('metrics.success-rate'),
+      name: t('metrics.success-ratio'),
       data: success
     }])
   }

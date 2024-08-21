@@ -9,7 +9,7 @@
   },
   "metrics": {
     "response-time": "Response time",
-    "success-rate": "Success",
+    "success-ratio": "Success",
     "avg": "Avg"
   },
   "button": {
