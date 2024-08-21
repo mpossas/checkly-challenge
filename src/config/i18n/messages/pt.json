@@ -3,9 +3,11 @@
     "title": "Relatórios",
     "description": "Analise o desempenho de longo prazo de suas verificações e exporte métricas agregadas para tarefas de relatórios externos."
   },
-  "table": {
+  "check": {
     "type": "Tipo",
-    "name": "Nome",
+    "name": "Nome"
+  },
+  "metrics": {
     "success": "Sucesso",
     "avg": "Méd"
   },

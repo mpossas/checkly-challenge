@@ -6,9 +6,9 @@
   </section>
   <ul>
     <li v-for="{ id, name } in checks" :key="id">
-      <details @toggle="(e: ToggleEvent) => getCheckStats(e, id)">
+      <details @toggle="(e: ToggleEvent) => toggleChartsView(e, id)">
         <summary>{{ name }}</summary>
-        <p :id="id"></p>
+        <StatsCharts :checkId="id" />
       </details>
     </li>
   </ul>
@@ -16,24 +16,26 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { fetchChecks, fetchCheckStats } from '@/services/checks'
+import { fetchChecks } from '@/services/checks'
 import type { Check, CheckId } from '@/services/interfaces'
+import { useStatsCharts } from '@/composables/charts'
 import ThemeButton from '@/components/preferences/theme/ThemeButton.vue'
 import LocaleSelector from '@/components/preferences/locale/LocaleSelector.vue'
+import StatsCharts from '@/components/stats-charts/StatsCharts.vue'
 
 const checks = ref<Check[] | undefined>([])
+
+const { plotStatsCharts } = useStatsCharts()
 
 onMounted(async () => {
   checks.value = await fetchChecks()
 })
 
-const getCheckStats = async (e: ToggleEvent, checkId: CheckId) => {
+const toggleChartsView = async (e: ToggleEvent, checkId: CheckId) => {
   // Prevents fetching when closing the chart view
   if (e.newState === 'closed') return
 
-  const checkStats = await fetchCheckStats(checkId)
-  const chartView = document.getElementById(checkId) as HTMLElement
-  chartView.innerHTML = `${checkStats?.length}`
+  plotStatsCharts(checkId)
 }
 </script>
 

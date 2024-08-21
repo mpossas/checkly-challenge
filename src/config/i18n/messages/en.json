@@ -3,9 +3,11 @@
     "title": "Reporting",
     "description": "Analyse long term performance of your checks and export aggregated metrics for external reporting duties."
   },
-  "table": {
+  "check": {
     "type": "Type",
-    "name": "Name",
+    "name": "Name"
+  },
+  "metrics": {
     "success": "Success",
     "avg": "Avg"
   },
