@@ -21,20 +21,19 @@ import type { Check, CheckId } from '@/services/interfaces'
 import ThemeButton from '@/components/preferences/theme/ThemeButton.vue'
 import LocaleSelector from '@/components/preferences/locale/LocaleSelector.vue'
 
-const checks = ref<Check[]>([])
+const checks = ref<Check[] | undefined>([])
 
 onMounted(async () => {
-  const response = await fetchChecks()
-  checks.value = response.data
+  checks.value = await fetchChecks()
 })
 
 const getCheckStats = async (e: ToggleEvent, checkId: CheckId) => {
   // Prevents fetching when closing the chart view
   if (e.newState === 'closed') return
 
-  const response = await fetchCheckStats(checkId)
+  const checkStats = await fetchCheckStats(checkId)
   const chartView = document.getElementById(checkId) as HTMLElement
-  chartView.innerHTML = `${response.data.length}`
+  chartView.innerHTML = `${checkStats?.length}`
 }
 </script>
 

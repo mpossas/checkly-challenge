@@ -4,7 +4,16 @@ import type { Check, CheckId, CheckStats } from './interfaces'
 axios.defaults.baseURL = 'http://localhost:3000/'
 axios.defaults.responseType = 'json'
 
-export const fetchChecks = () => axios.get<Check[]>('/checks')
+const apiFetch = async <T>(url: string, params?: object) => {
+  try {
+    const response = await axios.get<T>(url, params)
+    return response.data
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export const fetchChecks = () => apiFetch<Check[]>('/checks')
 
 export const fetchCheckStats = (checkId: CheckId) => {
   const now = Date.now()
@@ -16,5 +25,5 @@ export const fetchCheckStats = (checkId: CheckId) => {
     timestamp_lte: now
   }
 
-  return axios.get<CheckStats[]>('/check_stats', { params })
+  return apiFetch<CheckStats[]>('/check_stats', { params })
 }
