@@ -8,7 +8,8 @@
     "name": "Nome"
   },
   "metrics": {
-    "success": "Sucesso",
+    "response-time": "Tempo de resposta",
+    "success-rate": "Sucesso",
     "avg": "Méd"
   },
   "button": {

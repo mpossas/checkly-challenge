@@ -15,7 +15,7 @@ export const useStatsCharts = () => {
 
     checkStats.value = response
     plotResponseTimeChart(`response-time-${checkId}`)
-    plotSuccessRateChart(`success-${checkId}`)
+    plotSuccessRateChart(`success-rate-${checkId}`)
   }
 
   const plotResponseTimeChart = (hostElementId: string) => {
@@ -47,7 +47,7 @@ export const useStatsCharts = () => {
     })
 
     plotChart(hostElementId, [{
-      name: t('metrics.success'),
+      name: t('metrics.success-rate'),
       data: success
     }])
   }
@@ -65,7 +65,7 @@ export const useStatsCharts = () => {
         layout: 'vertical',
         verticalAlign: 'middle'
       },
-      colors: ['#bdbdbd', '#939393', '#696969'],
+      colors: ['#c8c8c8', '#7d7d7d', '#323232'],
       yAxis: {
         title: {
           text: ''
@@ -78,7 +78,21 @@ export const useStatsCharts = () => {
           hour: '%H:%M'
         }
       },
-      series
+      series,
+      responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 500
+          },
+          chartOptions: {
+            legend: {
+              align: 'center',
+              layout: 'horizontal',
+              verticalAlign: 'bottom',
+            }
+          }
+        }]
+      }
     })
   }
 

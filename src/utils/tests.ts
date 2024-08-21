@@ -10,6 +10,7 @@ export const mountComponent = (
     global: {
       plugins: [i18n]
     },
+    attachTo: document.body
   })
 }
 

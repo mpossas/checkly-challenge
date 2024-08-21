@@ -1,5 +1,5 @@
 <template>
-  <div v-html="getSvg()" style="display: inline; fill: var(--content-color);" />
+  <div v-html="getSvg()" style="display: inline; fill: var(--text-color);" />
 </template>
 
 <script setup lang="ts">

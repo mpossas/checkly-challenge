@@ -1,14 +1,42 @@
 :root {
-  --background-color: #F6F7F8;
-  --content-color: #242424;
+  --background-color: #fff;
+  --button-background: #ebebeb;
+  --chart-background: #fafafa;
+
+  --text-color: #000;
+  --button-text: #888888;
 }
 
 [data-theme="dark"] {
   --background-color: #242424;
-  --content-color: #F6F7F8;
+  --button-background: #464646;
+  --chart-background: #323232;
+
+  --text-color: #F6F7F8;
+  --button-text: #bcbcbc;
 }
 
 body {
   background-color: var(--background-color);
-  color: var(--content-color);
+  color: var(--text-color);
+}
+
+.highcharts-root {
+  .highcharts-background {
+    fill: var(--background-color);
+  }
+
+  text {
+    fill: var(--text-color) !important;
+  }
+
+  .highcharts-tooltip {
+    .highcharts-label-box {
+      fill: var(--background-color);
+    }
+
+    text {
+      fill: var(--text-color) !important;
+    }
+  }
 }
