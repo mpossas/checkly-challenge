@@ -1,14 +1,14 @@
 <template>
   <NavBar />
   <main>
-    <HelloWorld />
+    <Reporting />
     <Preferences />
   </main>
 </template>
 
 <script setup lang="ts">
 import NavBar from '@/components/nav-bar/NavBar.vue'
-import HelloWorld from '@/components/hello-world/HelloWorld.vue'
+import Reporting from '@/components/reporting/Reporting.vue'
 import Preferences from '@/components/preferences/Preferences.vue'
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <tr @click="toggleChartsView()">
     <td>
-      <Icon :name="chevronType" />
+      <Icon :name="chevronType" aria-hidden />
       {{ check.type }}
     </td>
     <td>{{ check.name }}</td>

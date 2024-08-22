@@ -38,6 +38,7 @@ onMounted(async () => {
 <style scoped>
 table {
   width: 100%;
+  margin-top: 2rem;
   border-collapse: collapse;
 
   tr {
