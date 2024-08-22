@@ -10,7 +10,9 @@
   "metrics": {
     "response-time": "Tempo de resposta",
     "success-ratio": "Sucesso",
-    "avg": "Méd"
+    "avg": "Méd",
+    "p95": "P95",
+    "p99": "P99"
   },
   "button": {
     "theme": "Tema de cores"

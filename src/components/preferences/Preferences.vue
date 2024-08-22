@@ -16,5 +16,7 @@ aside {
   align-items: center;
   align-self: flex-end;
   gap: 0.5rem;
+
+  margin-top: 1rem;
 }
 </style>

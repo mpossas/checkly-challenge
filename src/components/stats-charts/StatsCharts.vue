@@ -42,7 +42,7 @@ const displayChart = (chartType: number) => {
 
 <style scoped>
 article {
-  padding: 1rem;
+  cursor: default;
 }
 
 section {
@@ -55,6 +55,7 @@ section {
 button {
   border: none;
   cursor: pointer;
+  font-size: 12px;
 
   color: var(--button-text);
   background-color: inherit;
