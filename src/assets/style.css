@@ -1,42 +1,63 @@
 :root {
-  --background-color: #fff;
+  --dashboard-background: #fff;
   --button-background: #ebebeb;
   --chart-background: #fafafa;
+  --nav-bar-background: #e8e8e8;
+  --nav-bar-item-background: #cacaca;
 
-  --text-color: #000;
+  --dashboard-text: #000;
   --button-text: #888888;
 }
 
 [data-theme="dark"] {
-  --background-color: #242424;
+  --dashboard-background: #242424;
   --button-background: #464646;
   --chart-background: #323232;
+  --nav-bar-background: #2e2e2e;
+  --nav-bar-item-background: #454545;
 
-  --text-color: #F6F7F8;
+  --dashboard-text: #F6F7F8;
   --button-text: #bcbcbc;
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  margin: 0;
+  font-family: 'Roboto';
+
+  color: var(--dashboard-text);
+  background-color: var(--dashboard-background);
+}
+
+#app {
+  min-height: 100dvh;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+    gap: 4rem;
+  }
 }
 
 .highcharts-root {
   .highcharts-background {
-    fill: var(--background-color);
+    fill: var(--dashboard-background);
   }
 
   text {
-    fill: var(--text-color) !important;
+    fill: var(--dashboard-text) !important;
   }
 
   .highcharts-tooltip {
     .highcharts-label-box {
-      fill: var(--background-color);
+      fill: var(--dashboard-background);
     }
 
     text {
-      fill: var(--text-color) !important;
+      fill: var(--dashboard-text) !important;
     }
   }
 }
