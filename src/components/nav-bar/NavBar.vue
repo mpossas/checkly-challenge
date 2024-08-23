@@ -14,7 +14,7 @@ nav {
   display: flex;
   gap: 1rem;
 
-  @media (min-width: 500px) {
+  @media (min-width: 1080px) {
     flex-direction: column;
   }
 }

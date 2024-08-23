@@ -2,8 +2,8 @@
   <table>
     <thead>
       <tr>
-        <th v-for="(header, index) in headers" :key="index" scope="col">
-          {{ $t(header).toUpperCase() }}
+        <th v-for="(header, index) in tableHeaders" :key="index" scope="col">
+          {{ header }}
         </th>
       </tr>
     </thead>
@@ -24,17 +24,9 @@
 import { computed, onMounted, ref } from 'vue'
 import { fetchChecks } from '@/services/checks'
 import type { Check } from '@/services/interfaces'
+import { useTable } from '@/composables/table'
 import Error from '@/components/error/Error.vue'
 import ChecksTableRow from './ChecksTableRow.vue'
-
-const headers = [
-  'check.type',
-  'check.name',
-  'metrics.success-ratio',
-  'metrics.avg',
-  'metrics.p95',
-  'metrics.p99'
-]
 
 const checks = ref<Check[] | undefined>([])
 
@@ -43,6 +35,8 @@ const hasChecks = computed(() => !!checks.value)
 onMounted(async () => {
   checks.value = await fetchChecks()
 })
+
+const { tableHeaders } = useTable()
 </script>
 
 <style scoped>
@@ -67,7 +61,15 @@ table {
     }
 
     th:nth-of-type(2) {
-      width: 50%;
+      @media (min-width: 720px) {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    thead {
+      display: none;
     }
   }
 }

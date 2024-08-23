@@ -48,6 +48,7 @@ const displayChart = (chartType: number) => {
 <style scoped>
 article {
   cursor: default;
+  width: 100%;
 }
 
 section {

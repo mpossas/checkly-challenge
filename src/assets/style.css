@@ -59,7 +59,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 500px) {
+  @media (min-width: 1080px) {
     flex-direction: row;
     padding-right: 2.5rem;
     gap: 4rem;
