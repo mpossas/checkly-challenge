@@ -26,7 +26,9 @@ import { fetchChecks } from '@/services/checks'
 import type { Check } from '@/services/interfaces'
 import { useTable } from '@/composables/table'
 import Error from '@/components/error/Error.vue'
-import ChecksTableRow from './ChecksTableRow.vue'
+import ChecksTableRow from './row/ChecksTableRow.vue'
+
+const { tableHeaders } = useTable()
 
 const checks = ref<Check[] | undefined>([])
 
@@ -35,8 +37,6 @@ const hasChecks = computed(() => !!checks.value)
 onMounted(async () => {
   checks.value = await fetchChecks()
 })
-
-const { tableHeaders } = useTable()
 </script>
 
 <style scoped>
