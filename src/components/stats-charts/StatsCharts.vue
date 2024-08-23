@@ -16,14 +16,19 @@
         {{ $t('metrics.success-ratio') }}
       </button>
     </section>
-    <figure v-show="showResponseTime" :id="`response-time-${checkId}`"></figure>
-    <figure v-show="showSuccessRatio" :id="`success-ratio-${checkId}`"></figure>
+    <figure v-show="showResponseTime" :id="`response-time-${checkId}`">
+      <Error errorMessage="error.check-stats"/>
+    </figure>
+    <figure v-show="showSuccessRatio" :id="`success-ratio-${checkId}`">
+      <Error errorMessage="error.check-stats"/>
+    </figure>
   </article>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import type { CheckId } from '@/services/interfaces'
+import Error from '@/components/error/Error.vue'
 
 const RESPONSE_TIME = 0
 const SUCCESS_RATIO = 1

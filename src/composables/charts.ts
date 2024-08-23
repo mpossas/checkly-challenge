@@ -83,6 +83,9 @@ export const useStatsCharts = () => {
         layout: 'vertical',
         verticalAlign: 'middle'
       },
+      credits: {
+        enabled: false
+      },
       colors: ['#c8c8c8', '#7d7d7d', '#323232'],
       tooltip: {
         shared: true,

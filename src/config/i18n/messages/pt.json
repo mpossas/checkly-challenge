@@ -16,5 +16,10 @@
   },
   "button": {
     "theme": "Tema de cores"
+  },
+  "error": {
+    "checks": "Ocorreu um erro ao carregar suas verificações.",
+    "check-stats": "Ocorreu um erro ao carregar as métricas da sua verificação.",
+    "try-later": "Por favor, tente novamente mais tarde."
   }
 }

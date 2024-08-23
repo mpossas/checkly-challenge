@@ -16,5 +16,10 @@
   },
   "button": {
     "theme": "Color theme"
+  },
+  "error": {
+    "checks": "There was an error loading your checks.",
+    "check-stats": "There was an error loading your check stats.",
+    "try-later": "Please try again later."
   }
 }

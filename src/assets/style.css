@@ -1,3 +1,4 @@
+/* Light theme colors */
 :root {
   --dashboard-background: #fff;
   --button-background: #ebebeb;
@@ -9,6 +10,7 @@
   --button-text: #888888;
 }
 
+/* Dark theme colors */
 [data-theme="dark"] {
   --dashboard-background: #242424;
   --button-background: #464646;
@@ -20,29 +22,7 @@
   --button-text: #bcbcbc;
 }
 
-body {
-  margin: 0;
-  font-family: 'Roboto';
-
-  color: var(--dashboard-text);
-  background-color: var(--dashboard-background);
-}
-
-#app {
-  min-height: 100dvh;
-  box-sizing: border-box;
-  padding: 1rem;
-  padding-right: 2.5rem;
-
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: 500px) {
-    flex-direction: row;
-    gap: 4rem;
-  }
-}
-
+/* Chart colors */
 .highcharts-root {
   .highcharts-background {
     fill: var(--dashboard-background);
@@ -60,5 +40,28 @@ body {
     text {
       fill: var(--dashboard-text) !important;
     }
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto';
+
+  color: var(--dashboard-text);
+  background-color: var(--dashboard-background);
+}
+
+#app {
+  min-height: 100dvh;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+    padding-right: 2.5rem;
+    gap: 4rem;
   }
 }
