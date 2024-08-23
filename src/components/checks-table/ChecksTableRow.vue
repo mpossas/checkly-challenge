@@ -10,11 +10,13 @@
     <td>{{ toMilliseconds(check.p95) }}ms</td>
     <td>{{ toMilliseconds(check.p99) }}ms</td>
   </tr>
-  <tr v-show="displayCharts">
-    <td colspan="6">
-      <StatsCharts :checkId="check.id" />
-    </td>
-  </tr>
+  <Transition>
+    <tr v-show="displayCharts">
+      <td colspan="6" class="charts-view">
+        <StatsCharts :checkId="check.id" />
+      </td>
+    </tr>
+  </Transition>
 </template>
 
 <script setup lang="ts">
@@ -50,7 +52,7 @@ td {
   padding: 1rem 0 0.5rem 0;
 }
 
-td:nth-of-type(1):not([colspan="6"]) {
+td:nth-of-type(1):not(.charts-view) {
   text-align: left;
 
   display: flex;
@@ -61,5 +63,13 @@ td:nth-of-type(1):not([colspan="6"]) {
 td:nth-of-type(2) {
   text-align: left;
   width: 50%;
+}
+
+/* Animation */
+.v-enter-active {
+  transition: opacity 1s ease;
+}
+.v-enter-from {
+  opacity: 0;
 }
 </style>
