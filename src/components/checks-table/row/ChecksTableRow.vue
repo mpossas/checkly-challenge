@@ -105,7 +105,6 @@ td:nth-of-type(2) {
   td {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     width: 100%;
     padding: 0 0 0.5rem 0;
@@ -117,6 +116,8 @@ td:nth-of-type(2) {
 
   .table-header {
     display: block;
+    text-align: start;
+    width: 50%;
   }
 
   .charts-view {

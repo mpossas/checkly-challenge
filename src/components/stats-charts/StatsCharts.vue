@@ -1,10 +1,10 @@
 <template>
   <article>
     <ToggleButtons :options="charts" @change="displayChart" />
-    <figure v-show="showResponseTime" :id="`response-time-${checkId}`">
+    <figure v-show="showResponseTime" :id="`${RESPONSE_TIME}-${checkId}`">
       <Error errorMessage="error.check-stats"/>
     </figure>
-    <figure v-show="showSuccessRatio" :id="`success-ratio-${checkId}`">
+    <figure v-show="showSuccessRatio" :id="`${SUCCESS_RATIO}-${checkId}`">
       <Error errorMessage="error.check-stats"/>
     </figure>
   </article>
