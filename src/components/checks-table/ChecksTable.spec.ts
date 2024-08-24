@@ -1,5 +1,6 @@
 import { flushPromises } from '@vue/test-utils'
-import { checkMock, shallowMountComponent } from '@/utils/tests'
+import { shallowMountComponent } from '@/utils/tests'
+import { checkMock } from '@/utils/mocks'
 import ChecksTable from './ChecksTable.vue'
 
 vi.mock('@/services/checks', () => ({

@@ -1,6 +1,7 @@
 import { fetchCheckStats } from "@/services/checks"
 import { toMilliseconds, toPercentage } from "@/utils/metrics"
-import { checkMock, shallowMountComponent } from "@/utils/tests"
+import { shallowMountComponent } from "@/utils/tests"
+import { checkMock } from "@/utils/mocks"
 import ChecksTableRow from "./ChecksTableRow.vue"
 
 vi.mock('@/services/checks', () => ({
