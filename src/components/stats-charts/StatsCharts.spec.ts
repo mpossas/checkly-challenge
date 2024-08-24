@@ -9,8 +9,8 @@ describe('StatsCharts', () => {
     expect(wrapper.find('#success-ratio-test-id').isVisible()).toBe(false)
   })
 
-  it('changes visible chart', async () => {
-    await wrapper.find('[data-testid="success-ratio-button"]').trigger('click')
+  it('toggles visible chart', async () => {
+    await wrapper.find('[data-testid="success-ratio"]').trigger('click')
 
     expect(wrapper.find('#success-ratio-test-id').isVisible()).toBe(true)
     expect(wrapper.find('#response-time-test-id').isVisible()).toBe(false)
