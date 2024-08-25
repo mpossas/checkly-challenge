@@ -1,3 +1,4 @@
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 export const useTable = () => {
@@ -12,9 +13,13 @@ export const useTable = () => {
     p99: 'metrics.p99'
   }
 
-  Object.keys(headers).forEach(header => {
-    headers[header] = t(header).toUpperCase()
+  const tableHeaders = computed(() => {
+    const translatedHeaders: Record<string, string> = {}
+    Object.keys(headers).forEach(header => {
+      translatedHeaders[header] = t(headers[header]).toUpperCase()
+    })
+    return translatedHeaders
   })
 
-  return { tableHeaders: headers }
+  return { tableHeaders }
 }
