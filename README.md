@@ -18,11 +18,20 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
+### Documentation
+
+Please check the documentation page:
+
+```sh
+npm run docs:build
+npm run docs:preview
+```
+
 ### Compile and Hot-Reload for Development
 
 #### Backend
 ```sh
-# Start server to consume API
+# Leave server running to consume API
 npm run backend
 ```
 
@@ -44,6 +53,9 @@ npm run test:unit
 ```
 
 ### Run End-to-End Tests with [Playwright](https://playwright.dev)
+
+> [!IMPORTANT]
+> Disable the backend server before running locally
 
 ```sh
 # Install browsers for the first run

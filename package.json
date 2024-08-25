@@ -10,14 +10,16 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
-    "test": "npm run test:unit",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "backend": "json-server backend.js"
+    "backend": "json-server backend.js",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "@primer/octicons": "13.0.0",
@@ -59,6 +61,7 @@
     "typescript": "~5.4.0",
     "uuid": "8.3.2",
     "vite": "5.2.8",
+    "vitepress": "1.3.4",
     "vitest": "1.4.0",
     "vue-tsc": "2.0.11"
   }
