@@ -1,15 +1,18 @@
 <template>
   <div class="error-message">
     <Icon name="alert" :width="32" />
-    <span>{{ $t(errorMessage) }}</span>
+    <span>{{ $t(`error.${type}`) }}</span>
     <span>{{ $t('error.try-later') }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
-import Icon from '@/components/library/icon/Icon.vue'
+import Icon from '../icon/Icon.vue'
 
-defineProps<{ errorMessage: string }>()
+defineProps<{
+  /** Translatable error string */
+  type: string
+}>()
 </script>
 
 <style scoped>

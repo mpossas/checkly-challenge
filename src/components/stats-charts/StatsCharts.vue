@@ -2,10 +2,10 @@
   <article>
     <ToggleButtons :options="charts" @change="displayChart" />
     <figure v-show="showResponseTime" :id="`${RESPONSE_TIME}-${checkId}`">
-      <Error errorMessage="error.check-stats"/>
+      <Error type="check-stats"/>
     </figure>
     <figure v-show="showSuccessRatio" :id="`${SUCCESS_RATIO}-${checkId}`">
-      <Error errorMessage="error.check-stats"/>
+      <Error type="check-stats"/>
     </figure>
   </article>
 </template>
@@ -14,7 +14,7 @@
 import { computed, ref } from 'vue'
 import type { CheckId } from '@/services/interfaces'
 import ToggleButtons from '@/components/library/toggle-buttons/ToggleButtons.vue'
-import Error from '@/components/error/Error.vue'
+import Error from '@/components/library/error/Error.vue'
 
 const RESPONSE_TIME = 'response-time'
 const SUCCESS_RATIO = 'success-ratio'

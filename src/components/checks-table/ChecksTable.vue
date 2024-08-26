@@ -13,7 +13,7 @@
     <tbody v-else>
       <tr>
         <td colspan="6">
-          <Error errorMessage="error.checks" />
+          <Error type="checks" />
         </td>
       </tr>
     </tbody>
@@ -25,7 +25,7 @@ import { computed, onMounted, ref } from 'vue'
 import { fetchChecks } from '@/services/checks'
 import type { Check } from '@/services/interfaces'
 import { useTable } from '@/composables/table'
-import Error from '@/components/error/Error.vue'
+import Error from '@/components/library/error/Error.vue'
 import ChecksTableRow from './row/ChecksTableRow.vue'
 
 const { tableHeaders } = useTable()
