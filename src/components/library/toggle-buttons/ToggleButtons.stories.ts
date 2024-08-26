@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import { fn } from '@storybook/test'
 import ToggleButtons from './ToggleButtons.vue'
 
+/** Buttons for choosing between a set of options. */
 const meta = {
-  title: 'ToggleButtons',
+  title: 'Toggle Buttons',
   component: ToggleButtons,
-  parameters: { docs: { description: { component: 'Buttons to toggle between options' } } },
   tags: ['autodocs'],
   argTypes: {},
   args: {
@@ -16,7 +16,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Charts: Story = {
+export const Metrics: Story = {
   args: {
     options: [
       'response-time',

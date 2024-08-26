@@ -15,11 +15,15 @@
     "p99": "P99"
   },
   "button": {
-    "theme": "Color theme"
+    "theme": "Color theme",
+    "clear": "Clear text"
   },
   "error": {
     "checks": "There was an error loading your checks.",
     "check-stats": "There was an error loading your check stats.",
     "try-later": "Please try again later."
+  },
+  "search-bar": {
+    "placeholder": "Search..."
   }
 }

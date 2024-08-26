@@ -3,8 +3,13 @@
   --dashboard-background: #fff;
   --button-background: #ebebeb;
   --chart-background: #fafafa;
+
   --nav-bar-background: #e8e8e8;
   --nav-bar-item-background: #cacaca;
+
+  --search-bar-background: #ededed;
+  --active-search-bar-background: #f8f8f8;
+  --search-key-background: #d9d9d9;
 
   --dashboard-text: #000;
   --button-text: #888888;
@@ -15,8 +20,13 @@
   --dashboard-background: #242424;
   --button-background: #464646;
   --chart-background: #323232;
+
   --nav-bar-background: #2e2e2e;
   --nav-bar-item-background: #454545;
+
+  --search-bar-background: #333333;
+  --active-search-bar-background: #282828;
+  --search-key-background: #292929;
 
   --dashboard-text: #F6F7F8;
   --button-text: #bcbcbc;

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import Error from './Error.vue'
 
+/** Warns user of an error fetching data. */
 const meta = {
   title: 'Error',
   component: Error,
-  parameters: { docs: { description: { component: 'Warns user of an error fetching data' } } },
   tags: ['autodocs'],
   argTypes: {},
   args: {},
