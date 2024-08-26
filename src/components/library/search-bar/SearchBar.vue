@@ -8,7 +8,11 @@
       @input="emit('input', search)"
     />
     <span>/</span>
-    <button v-show="!!search" :aria-label="$t('button.clear')" @click="clearSearch">
+    <button
+      v-show="!!search"
+      :aria-label="$t('button.clear')"
+      @click="clearSearch"
+    >
       <Icon name="x" :width="12" />
     </button>
   </div>
@@ -20,14 +24,15 @@ import Icon from '@/components/library/icon/Icon.vue'
 
 const search = ref('')
 
-const clearSearch = () => {
-  search.value = ''
-}
-
 const emit = defineEmits<{
-  /** Emitted when text is typed */
+  /** Emitted when the search text changes */
   (event: 'input', search: string): void
 }>()
+
+const clearSearch = () => {
+  search.value = ''
+  emit('input', '')
+}
 
 const focusOnInput = (e: KeyboardEvent) => {
   if (e.key === '/') {
