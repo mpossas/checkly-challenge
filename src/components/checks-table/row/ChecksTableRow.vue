@@ -63,7 +63,7 @@ const toggleChartsView = async () => {
 <style scoped>
 tr {
   cursor: pointer;
-  border-bottom: 1px solid var(--nav-bar-background);
+  border-bottom: 1px solid var(--nav-bar);
 }
 
 td {
@@ -99,7 +99,7 @@ td:nth-of-type(2) {
     align-items: baseline;
 
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid var(--nav-bar-item-background);
+    border-bottom: 1px solid var(--nav-bar-item);
   }
 
   td {

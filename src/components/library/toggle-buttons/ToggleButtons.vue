@@ -45,7 +45,7 @@ button {
   cursor: pointer;
   font-size: 12px;
 
-  color: var(--button-text);
+  color: var(--button--text);
   background-color: inherit;
 }
 
@@ -53,6 +53,6 @@ button.selected {
   font-weight: 600;
   padding: 2px 5px;
   border-radius: 5px;
-  background-color: var(--button-background);
+  background-color: var(--button);
 }
 </style>

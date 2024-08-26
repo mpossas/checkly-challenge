@@ -9,7 +9,7 @@
 nav {
   padding: 1rem;
   border-radius: 4px;
-  background-color: var(--nav-bar-background);
+  background-color: var(--nav-bar);
 
   display: flex;
   gap: 1rem;
@@ -20,7 +20,7 @@ nav {
 }
 
 .nav-bar-item {
-  background-color: var(--nav-bar-item-background);
+  background-color: var(--nav-bar-item);
   border-radius: 4px;
 }
 
@@ -31,7 +31,7 @@ span {
 
 a {
   text-decoration: none;
-  color: var(--dashboard-text);
+  color: var(--dashboard--text);
 
   padding: 11px 14px;
 

@@ -47,7 +47,7 @@ table {
 
   thead {
     tr {
-      border-bottom: 1px solid var(--dashboard-text);
+      border-bottom: 1px solid var(--dashboard--text);
     }
 
     th {

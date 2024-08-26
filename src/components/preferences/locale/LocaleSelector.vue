@@ -18,8 +18,8 @@ const { locale, availableLocales } = useI18n()
 
 <style scoped>
 select {
-  background-color: var(--dashboard-background);
-  color: var(--dashboard-text);
+  background-color: var(--dashboard);
+  color: var(--dashboard--text);
 
   padding: 0.15rem 0.25rem;
 }

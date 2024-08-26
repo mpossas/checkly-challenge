@@ -49,13 +49,13 @@ onUnmounted(() => document.removeEventListener('keydown', focusOnInput))
   font-size: 14px;
   width: fit-content;
 
-  background-color: var(--search-bar-background);
-  border: 1px solid var(--search-bar-background);
+  background-color: var(--search-bar);
+  border: 1px solid var(--search-bar);
   border-radius: 4px;
 }
 
 .search-bar:focus-within {
-  background-color: var(--active-search-bar-background);
+  background-color: var(--search-bar--active);
 
   input {
     min-width: 200px;
@@ -80,7 +80,7 @@ input {
 
   font-size: 14px;
   margin: 0 0.5rem;
-  color: var(--dashboard-text);
+  color: var(--dashboard--text);
 }
 
 input::placeholder {
@@ -99,7 +99,7 @@ span {
   padding: 1px 5px;
 
   border-radius: 4px;
-  background-color: var(--search-key-background);
+  background-color: var(--search-bar-key);
 }
 
 button {
@@ -107,7 +107,7 @@ button {
   border: none;
   cursor: pointer;
 
-  color: var(--button-text);
+  color: var(--button--text);
   background-color: inherit;
 }
 </style>

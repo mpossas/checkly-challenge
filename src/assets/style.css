@@ -1,54 +1,56 @@
 /* Light theme colors */
 :root {
-  --dashboard-background: #fff;
-  --button-background: #ebebeb;
-  --chart-background: #fafafa;
+  --dashboard: #fff;
+  --dashboard--text: #000;
 
-  --nav-bar-background: #e8e8e8;
-  --nav-bar-item-background: #cacaca;
+  --nav-bar: #e8e8e8;
+  --nav-bar-item: #cacaca;
 
-  --search-bar-background: #ededed;
-  --active-search-bar-background: #f8f8f8;
-  --search-key-background: #d9d9d9;
+  --button: #ebebeb;
+  --button--text: #888888;
 
-  --dashboard-text: #000;
-  --button-text: #888888;
+  --chart: #fafafa;
+
+  --search-bar: #ededed;
+  --search-bar--active: #f8f8f8;
+  --search-bar-key: #d9d9d9;
 }
 
 /* Dark theme colors */
 [data-theme="dark"] {
-  --dashboard-background: #242424;
-  --button-background: #464646;
-  --chart-background: #323232;
+  --dashboard: #242424;
+  --dashboard--text: #f6f7f8;
 
-  --nav-bar-background: #2e2e2e;
-  --nav-bar-item-background: #454545;
+  --nav-bar: #2e2e2e;
+  --nav-bar-item: #454545;
 
-  --search-bar-background: #333333;
-  --active-search-bar-background: #282828;
-  --search-key-background: #292929;
+  --button: #464646;
+  --button--text: #bcbcbc;
 
-  --dashboard-text: #F6F7F8;
-  --button-text: #bcbcbc;
+  --chart: #323232;
+
+  --search-bar: #333333;
+  --search-bar--active: #282828;
+  --search-bar-key: #292929;
 }
 
 /* Chart colors */
 .highcharts-root {
   .highcharts-background {
-    fill: var(--dashboard-background);
+    fill: var(--dashboard);
   }
 
   text {
-    fill: var(--dashboard-text) !important;
+    fill: var(--dashboard--text) !important;
   }
 
   .highcharts-tooltip {
     .highcharts-label-box {
-      fill: var(--dashboard-background);
+      fill: var(--dashboard);
     }
 
     text {
-      fill: var(--dashboard-text) !important;
+      fill: var(--dashboard--text) !important;
     }
   }
 }
@@ -57,8 +59,8 @@ body {
   margin: 0;
   font-family: 'Roboto';
 
-  color: var(--dashboard-text);
-  background-color: var(--dashboard-background);
+  color: var(--dashboard--text);
+  background-color: var(--dashboard);
 }
 
 #app {
