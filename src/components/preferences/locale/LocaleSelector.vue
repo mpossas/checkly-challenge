@@ -1,5 +1,5 @@
 <template>
-  <select v-model="locale">
+  <select v-model="locale" :aria-label="$t('select.language')">
     <option
       v-for="locale in availableLocales"
       :key="locale"

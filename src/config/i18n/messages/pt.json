@@ -15,8 +15,11 @@
     "p99": "P99"
   },
   "button": {
-    "theme": "Tema de cores",
+    "theme": "Alterar tema de cores",
     "clear": "Apagar texto"
+  },
+  "select": {
+    "language": "Selecionar idioma"
   },
   "error": {
     "checks": "Ocorreu um erro ao carregar suas verificações.",

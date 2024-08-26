@@ -1,13 +1,11 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import Highcharts from 'highcharts'
-import highchartsAccessibility from "highcharts/modules/accessibility"
-import type { CheckId, CheckStats } from "@/services/interfaces"
-import { fetchCheckStats } from '@/services/checks'
 import { toPercentage, toSeconds } from '@/utils/metrics'
+import { fetchCheckStats } from '@/services/checks'
+import type { CheckId, CheckStats } from "@/services/interfaces"
 import type { ChartOptions } from './interfaces'
 
-highchartsAccessibility(Highcharts)
+declare const Highcharts: typeof import('highcharts')
 
 export const useStatsCharts = () => {
   const { t } = useI18n()

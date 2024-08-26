@@ -15,8 +15,11 @@
     "p99": "P99"
   },
   "button": {
-    "theme": "Color theme",
+    "theme": "Change color theme",
     "clear": "Clear text"
+  },
+  "select": {
+    "language": "Select language"
   },
   "error": {
     "checks": "There was an error loading your checks.",
